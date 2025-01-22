@@ -1,6 +1,5 @@
 // CSS
 import "./app.css";
-import "./responsive.css";
 
 //React
 import { useCallback, useEffect, useState } from "react";
