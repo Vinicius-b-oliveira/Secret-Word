@@ -43,3 +43,15 @@
         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
     }
 }
+
+@media (max-width: 568px) {
+    .start h1 {
+        font-size: 3em;
+    }
+    .start p {
+        font-size: 1em;
+    }
+    .start button {
+        font-size: 1em;
+    }
+}
