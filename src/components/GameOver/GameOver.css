@@ -1,0 +1,7 @@
+.end_game_score {
+    font-size: 1.5em;
+}
+
+.end_game_score span {
+    color: #ecfa00;
+}
