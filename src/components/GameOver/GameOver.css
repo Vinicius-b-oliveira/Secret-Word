@@ -1,7 +1,70 @@
-.end_game_score {
-    font-size: 1.5em;
+.endGame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    color: #e0ffe0;
+    animation: fadeIn 1s ease-in-out;
 }
 
-.end_game_score span {
-    color: #ecfa00;
+.endGame h1 {
+    font-size: 4em;
+    color: #76c76b;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    margin-bottom: 1em;
+}
+
+.endGameScore {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #e9ffe9;
+}
+
+.endGameScore span {
+    color: #ffc107;
+    font-weight: bold;
+    font-size: 2.2em;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.endGame p {
+    font-size: 1.2em;
+    margin-bottom: 2em;
+    color: #e0ffe0;
+}
+
+.endGame button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 0.8em 2em;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #1e7a34;
+        transform: scale(1.05);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    &:active {
+        transform: scale(0.95);
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }

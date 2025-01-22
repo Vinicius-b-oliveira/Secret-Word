@@ -1,5 +1,6 @@
 // CSS
 import "./app.css";
+import "./responsive.css";
 
 //React
 import { useCallback, useEffect, useState } from "react";
@@ -24,7 +25,6 @@ function App() {
     const [gameStage, setGameStage] = useState(stages[0].name);
     const [words] = useState(wordsList);
 
-    const [pickedWord, setPickedWord] = useState("");
     const [pickedCategory, setPickedCategory] = useState("");
     const [letters, setLetters] = useState([]);
 
@@ -53,7 +53,6 @@ function App() {
 
         wordLetters = wordLetters.map((letter) => letter.toLowerCase());
 
-        setPickedWord(word);
         setPickedCategory(category);
         setLetters(wordLetters);
 
@@ -67,6 +66,7 @@ function App() {
             guessedLetters.includes(normalizedLetter) ||
             wrongLetters.includes(normalizedLetter)
         ) {
+            alert("Você já usou essa letra!");
             return;
         }
 
@@ -102,6 +102,7 @@ function App() {
             setScore((prev) => prev + 100);
             clearLetterStates();
             startGame();
+            setGuesses(guessesQty);
         }
     }, [guessedLetters, letters, startGame]);
 
@@ -117,7 +118,6 @@ function App() {
             {gameStage === "game" && (
                 <Game
                     verifyLetter={verifyLetter}
-                    pickedWord={pickedWord}
                     pickedCategory={pickedCategory}
                     letters={letters}
                     guessedLetters={guessedLetters}
