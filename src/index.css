@@ -19,6 +19,11 @@ body {
     color: #fff;
 }
 
+ul,
+ol {
+    list-style: none;
+}
+
 button {
     background-color: #1646a0;
     color: #fff;

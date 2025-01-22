@@ -26,10 +26,12 @@ function App() {
     const [pickedCategory, setPickedCategory] = useState("");
     const [letters, setLetters] = useState([]);
 
-    const [guessedLetters, setGuessedLetters] = useState("");
+    const [guessedLetters, setGuessedLetters] = useState([]);
     const [wrongLetters, setWrongLetters] = useState([]);
     const [guesses, setGuesses] = useState(3);
     const [score, setScore] = useState(0);
+
+    console.log(letters);
 
     const pickWordAndCategory = () => {
         const categories = Object.keys(words);
@@ -56,8 +58,21 @@ function App() {
         setGameStage(stages[1].name);
     };
 
-    const verifyLetter = () => {
-        setGameStage(stages[2].name);
+    const verifyLetter = (letter) => {
+        const normalizedLetter = letter.toString().toLowerCase();
+
+        if (
+            guessedLetters.includes(normalizedLetter) ||
+            wrongLetters.includes(normalizedLetter)
+        ) {
+            return;
+        }
+
+        if (letters.includes(normalizedLetter)) {
+            setGuessedLetters((prev) => [...prev, normalizedLetter]);
+        } else {
+            setWrongLetters((prev) => [...prev, normalizedLetter]);
+        }
     };
 
     const retry = () => {
